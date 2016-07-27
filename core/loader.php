@@ -677,7 +677,9 @@ class BPGE extends BP_Group_Extension {
 
 				$this->notices( 'settings_updated' );
 
-				bp_core_redirect( bp_get_group_permalink( $bp->groups->current_group ) . 'admin/' . $this->slug . '/' );
+				// bp_core_redirect( bp_get_group_permalink( $bp->groups->current_group ) . 'admin/' . $this->slug . '/' );
+				// reload current url -- by kishore
+				wp_redirect($_SERVER['REQUEST_URI']); exit;
 			}
 
 			// Save new field
@@ -719,7 +721,9 @@ class BPGE extends BP_Group_Extension {
 					$this->notices( 'added_field' );
 				}
 
-				bp_core_redirect( bp_get_group_permalink( $bp->groups->current_group ) . 'admin/' . $this->slug . '/fields/' );
+				// bp_core_redirect( bp_get_group_permalink( $bp->groups->current_group ) . 'admin/' . $this->slug . '/fields/' );
+				// redirect url -- by kishore
+				wp_redirect($_SERVER['REQUEST_URI'] . '/fields/'); exit;
 			}
 
 			// Save new page
@@ -760,7 +764,9 @@ class BPGE extends BP_Group_Extension {
 
 				$this->notices( 'added_page' );
 
-				bp_core_redirect( bp_get_group_permalink( $bp->groups->current_group ) . 'admin/' . $this->slug . '/pages/' );
+				// bp_core_redirect( bp_get_group_permalink( $bp->groups->current_group ) . 'admin/' . $this->slug . '/pages/' );
+				// redirect url -- by kishore
+				wp_redirect($_SERVER['REQUEST_URI'] . '/pages/'); exit;
 			}
 
 			// Edit existing field
@@ -800,7 +806,9 @@ class BPGE extends BP_Group_Extension {
 					$this->notices( 'edited_field' );
 				}
 
-				bp_core_redirect( bp_get_group_permalink( $bp->groups->current_group ) . 'admin/' . $this->slug . '/fields/' );
+				// bp_core_redirect( bp_get_group_permalink( $bp->groups->current_group ) . 'admin/' . $this->slug . '/fields/' );
+				// redirect url -- by kishore
+				wp_redirect($_SERVER['REQUEST_URI'] . '/fields/'); exit;
 
 			}
 
@@ -824,7 +832,9 @@ class BPGE extends BP_Group_Extension {
 
 				$this->notices( 'edited_page' );
 
-				bp_core_redirect( bp_get_group_permalink( $bp->groups->current_group ) . 'admin/' . $this->slug . '/pages/' );
+				// bp_core_redirect( bp_get_group_permalink( $bp->groups->current_group ) . 'admin/' . $this->slug . '/pages/' );
+				// redirect url -- by kishore
+				wp_redirect($_SERVER['REQUEST_URI'] . '/pages/'); exit;
 			}
 		}
 
